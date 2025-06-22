@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500;600&family=Cinzel:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Sacred Design Components */
+  .sacred-gradient {
+    @apply bg-gradient-to-br from-sacred-gold via-sacred-purple to-sacred-blue;
+  }
+  
+  .sacred-text {
+    @apply bg-gradient-to-r from-sacred-gold to-sacred-purple bg-clip-text text-transparent;
+  }
+  
+  .divine-glow {
+    @apply shadow-lg shadow-vibe-primary/20;
+  }
+  
+  .prophet-card {
+    @apply rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:shadow-vibe-primary/10;
+  }
+  
+  .commandment-header {
+    @apply font-sacred text-2xl font-semibold text-sacred-gold md:text-3xl;
+  }
+  
+  /* Monaco Editor Styles */
+  .monaco-editor-wrapper {
+    @apply rounded-lg border border-border overflow-hidden;
+  }
+  
+  /* Progress Bar Styles */
+  .progress-sacred {
+    @apply bg-gradient-to-r from-sacred-gold to-sacred-purple;
+  }
+  
+  /* Achievement Badge Styles */
+  .badge-bronze {
+    @apply bg-gradient-to-r from-amber-600 to-amber-700 text-white;
+  }
+  
+  .badge-silver {
+    @apply bg-gradient-to-r from-gray-400 to-gray-500 text-white;
+  }
+  
+  .badge-gold {
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-black;
+  }
+  
+  .badge-diamond {
+    @apply bg-gradient-to-r from-blue-400 to-purple-500 text-white;
+  }
+  
+  .badge-divine {
+    @apply sacred-gradient text-white;
+  }
+  
+  /* Interactive Elements */
+  .interactive-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+  
+  .code-block {
+    @apply rounded-lg bg-muted p-4 font-mono text-sm;
+  }
+  
+  /* Scrollbar Styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-muted rounded-lg;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-lg hover:bg-border/80;
+  }
+  
+  /* Loading States */
+  .loading-pulse {
+    @apply animate-pulse bg-gradient-to-r from-muted via-muted/50 to-muted;
+  }
+  
+  /* Responsive Typography */
+  .responsive-text-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .responsive-text-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .responsive-text-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .responsive-text-lg {
+    @apply text-lg sm:text-xl;
+  }
+  
+  .responsive-text-xl {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  .responsive-text-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  
+  .responsive-text-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+}
+
+/* Animations for Interactive Elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.5);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse-glow-animation {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.slide-up-animation {
+  animation: slide-up 0.6s ease-out;
+}
+
+/* Sacred Geometry Backgrounds */
+.sacred-bg-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+}
+
+/* Workshop Module Specific Styles */
+.workshop-container {
+  @apply min-h-screen bg-gradient-to-br from-background via-background to-muted/20;
+}
+
+.workshop-sidebar {
+  @apply sticky top-0 h-screen overflow-y-auto bg-card/80 backdrop-blur-sm border-r border-border/50;
+}
+
+.workshop-content {
+  @apply flex-1 p-6 lg:p-8;
+}
+
+/* Code Playground Styles */
+.code-playground {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-6 h-[600px];
+}
+
+.code-editor {
+  @apply rounded-lg border border-border overflow-hidden;
+}
+
+.code-output {
+  @apply rounded-lg border border-border bg-muted/50 p-4 overflow-auto;
+}
+
+/* Community Features */
+.community-post {
+  @apply rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:shadow-lg;
+}
+
+.user-avatar {
+  @apply rounded-full border-2 border-border;
+}
+
+/* Gamification Elements */
+.xp-bar {
+  @apply h-2 bg-muted rounded-full overflow-hidden;
+}
+
+.xp-fill {
+  @apply h-full bg-gradient-to-r from-vibe-primary to-vibe-secondary transition-all duration-500;
+}
+
+.achievement-badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .workshop-container {
+    @apply block;
+  }
+  
+  .workshop-sidebar {
+    @apply relative h-auto;
+  }
+  
+  .code-playground {
+    @apply grid-cols-1 h-auto;
+  }
+  
+  .code-editor,
+  .code-output {
+    @apply h-[300px];
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+}
